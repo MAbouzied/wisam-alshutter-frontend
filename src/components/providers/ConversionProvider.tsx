@@ -46,10 +46,7 @@ export function ConversionProvider({ children }: { children: React.ReactNode }) 
         placement={selectorPlacement}
       />
       <StickyMobileBar onOpenBranchSelector={openBranchSelector} />
-      <FloatingWhatsApp
-        onClick={() => openBranchSelector("whatsapp", "page")}
-        className="hidden md:flex"
-      />
+      <FloatingWhatsApp onClick={() => openBranchSelector("whatsapp", "page")} />
     </ConversionContext.Provider>
   );
 }

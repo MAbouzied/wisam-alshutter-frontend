@@ -10,7 +10,7 @@ export function FloatingWhatsApp({ onClick, className = "" }: FloatingWhatsAppPr
     <button
       type="button"
       onClick={onClick}
-      className={`fixed bottom-6 start-6 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-105 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#25D366] focus-visible:outline-offset-2 ${className}`}
+      className={`fixed bottom-6 start-6 z-40 hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-105 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#25D366] focus-visible:outline-offset-2 ${className}`}
       aria-label="فتح واتساب"
     >
       <svg
