@@ -19,7 +19,7 @@ export function createMetadata({
       title,
       description,
       url,
-      siteName: "وسام الشتر",
+      siteName: "نوافذ شتر",
       locale: "ar_SA",
       type: "website",
     },

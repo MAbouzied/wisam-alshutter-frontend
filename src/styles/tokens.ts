@@ -1,5 +1,5 @@
 /**
- * Design system tokens for وسام الشتر
+ * Design system tokens for نوافذ شتر
  * Primary accent: deep green (premium, trustworthy)
  */
 

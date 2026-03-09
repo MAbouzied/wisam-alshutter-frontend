@@ -15,7 +15,7 @@ const serviceCategories = [
   },
   {
     title: "أبواب ألمنيوم",
-    desc: "أبواب ألمنيوم للواجهات والمداخل. جودة وسام الشتر.",
+    desc: "أبواب ألمنيوم للواجهات والمداخل. جودة نوافذ شتر.",
     subtypes: ["أبواب واجهات", "أبواب مداخل", "أبواب زجاجية"],
   },
 ];
@@ -23,7 +23,7 @@ const serviceCategories = [
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "خدمات الشتر | وسام الشتر",
+  title: "خدمات الشتر | نوافذ شتر",
   description: "خدمات الشتر: شتر رول، شتر داخلي، شتر خارجي، شتر كهربائي، شتر يدوي، شبابيك وأبواب ألمنيوم. الرياض وجدة.",
   path: "/services",
 });

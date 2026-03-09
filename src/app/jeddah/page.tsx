@@ -8,8 +8,8 @@ import { siteConfig } from "@/config/siteConfig";
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "شتر شبابيك جدة | وسام الشتر",
-  description: "تركيب شتر رول، شتر داخلي وخارجي في جدة. وسام الشتر — خبرة 10 سنوات.",
+  title: "شتر شبابيك جدة | نوافذ شتر",
+  description: "تركيب شتر رول، شتر داخلي وخارجي في جدة. نوافذ شتر — خبرة 10 سنوات.",
   path: "/jeddah",
 });
 
@@ -20,7 +20,7 @@ export default function JeddahPage() {
         title="شتر شبابيك جدة"
         subtitle="تركيب شتر رول، شتر داخلي، شتر خارجي في جدة. رد سريع على واتساب. احصل على عرض سعر بدون التزام."
       />
-      <Section title="لماذا وسام الشتر في جدة؟">
+      <Section title="لماذا نوافذ شتر في جدة؟">
         <div className="grid gap-6 md:grid-cols-3 text-center">
           <Card variant="benefit">
             <p className="font-bold text-primary">{siteConfig.experience}</p>

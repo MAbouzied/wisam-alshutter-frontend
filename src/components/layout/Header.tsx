@@ -2,18 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/siteConfig";
 import { useConversion } from "@/components/providers/ConversionProvider";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { href: "/", label: "الرئيسية" },
   { href: "/services", label: "خدمات الشتر" },
   { href: "/our-work", label: "أعمالنا" },
-  { href: "/jeddah", label: "جدة" },
-  { href: "/riyadh", label: "الرياض" },
-  { href: "/about", label: "من نحن" },
   { href: "/contact", label: "تواصل معنا" },
   { href: "/faq", label: "الأسئلة الشائعة" },
 ];
@@ -60,9 +57,10 @@ interface NavDrawerProps {
   onClose: () => void;
   onWhatsAppClick: () => void;
   onCallClick: () => void;
+  pathname: string | null;
 }
 
-function NavDrawer({ open, onClose, onWhatsAppClick, onCallClick }: NavDrawerProps) {
+function NavDrawer({ open, onClose, onWhatsAppClick, onCallClick, pathname }: NavDrawerProps) {
   const drawerRef = useRef<HTMLDivElement>(null);
   const firstFocusRef = useRef<HTMLButtonElement>(null);
 
@@ -178,16 +176,23 @@ function NavDrawer({ open, onClose, onWhatsAppClick, onCallClick }: NavDrawerPro
 
           {/* Nav links */}
           <div className="border-t border-zinc-200 pt-4 px-4 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={onClose}
-                className="block rounded-lg px-3 py-2.5 text-base font-medium text-zinc-700 hover:text-primary hover:bg-primary-muted/50 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={onClose}
+                  className={`block rounded-lg px-3 py-2.5 text-base font-medium transition-colors ${
+                    isActive
+                      ? "text-primary font-semibold bg-primary-muted/50"
+                      : "text-zinc-700 hover:text-primary hover:bg-primary-muted/50"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Secondary links */}
@@ -229,13 +234,14 @@ function HeaderMobile({
         className="flex items-center gap-2 shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 rounded-lg"
         aria-label={`${siteConfig.brand.short} — الرئيسية`}
       >
-        <div className="relative h-8 w-auto">
+        <div className="relative h-10 w-[140px] flex items-center">
           <Image
             src={siteConfig.brand.logo}
             alt=""
-            width={120}
-            height={36}
-            className="h-8 w-auto object-contain"
+            width={140}
+            height={70}
+            className="h-10 w-auto max-w-[140px] object-contain object-left"
+            style={{ width: "auto", height: "2.5rem" }}
             priority
           />
         </div>
@@ -255,8 +261,10 @@ function HeaderMobile({
 
 function HeaderDesktop({
   openBranchSelector,
+  pathname,
 }: {
   openBranchSelector: (channel: "whatsapp" | "call", placement: "header") => void;
+  pathname: string | null;
 }) {
   return (
     <div className="hidden md:flex items-center justify-between gap-4 flex-1 min-w-0">
@@ -265,27 +273,35 @@ function HeaderDesktop({
         className="flex items-center gap-2 shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 rounded-lg"
         aria-label={`${siteConfig.brand.short} — الرئيسية`}
       >
-        <div className="relative h-9 w-auto">
+        <div className="relative h-10 w-[160px] flex items-center">
           <Image
             src={siteConfig.brand.logo}
             alt=""
-            width={120}
-            height={36}
-            className="h-9 w-auto object-contain"
+            width={160}
+            height={80}
+            className="h-10 w-auto max-w-[160px] object-contain object-left"
+            style={{ width: "auto", height: "2.5rem" }}
             priority
           />
         </div>
       </Link>
       <nav className="flex items-center gap-1" aria-label="القائمة الرئيسية">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 hover:text-primary hover:bg-primary-muted/50 transition-colors"
-          >
-            {link.label}
-          </Link>
-        ))}
+        {navLinks.map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-primary font-semibold bg-primary-muted/50"
+                  : "text-zinc-600 hover:text-primary hover:bg-primary-muted/50"
+              }`}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
       <div className="flex items-center gap-2 shrink-0">
         <Button
@@ -312,16 +328,16 @@ function HeaderDesktop({
 export function Header({ hasRamadanBar }: HeaderProps) {
   const { openBranchSelector } = useConversion();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
       <header
-        className="sticky z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
-        style={hasRamadanBar ? { top: "44px" } : { top: 0 }}
+        className={`fixed inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] ${hasRamadanBar ? "top-[44px]" : "top-0"}`}
       >
         <div className="mx-auto max-w-[1200px] px-4 md:px-6 py-3">
           <HeaderMobile onHamburgerClick={() => setDrawerOpen(true)} drawerOpen={drawerOpen} />
-          <HeaderDesktop openBranchSelector={openBranchSelector} />
+          <HeaderDesktop openBranchSelector={openBranchSelector} pathname={pathname} />
         </div>
       </header>
 
@@ -330,6 +346,7 @@ export function Header({ hasRamadanBar }: HeaderProps) {
         onClose={() => setDrawerOpen(false)}
         onWhatsAppClick={() => openBranchSelector("whatsapp", "drawer")}
         onCallClick={() => openBranchSelector("call", "drawer")}
+        pathname={pathname}
       />
     </>
   );

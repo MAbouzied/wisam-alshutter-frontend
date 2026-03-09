@@ -6,8 +6,8 @@ import { siteConfig } from "@/config/siteConfig";
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "تواصل معنا | وسام الشتر",
-  description: "تواصل مع وسام الشتر — الرياض وجدة. واتساب، اتصال، أو نموذج طلب عرض سعر.",
+  title: "تواصل معنا | نوافذ شتر",
+  description: "تواصل مع نوافذ شتر — الرياض وجدة. واتساب، اتصال، أو نموذج طلب عرض سعر.",
   path: "/contact",
 });
 

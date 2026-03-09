@@ -6,8 +6,8 @@ import { ServiceCtaLink } from "@/components/ui/ServiceCtaLink";
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "أعمالنا | وسام الشتر",
-  description: "معرض أعمال وسام الشتر: شتر، شبابيك ألمنيوم، أبواب ألمنيوم. الرياض وجدة.",
+  title: "أعمالنا | نوافذ شتر",
+  description: "معرض أعمال نوافذ شتر: شتر، شبابيك ألمنيوم، أبواب ألمنيوم. الرياض وجدة.",
   path: "/our-work",
 });
 

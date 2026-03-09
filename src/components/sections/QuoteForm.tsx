@@ -4,7 +4,6 @@ import { useState, FormEvent } from "react";
 
 export interface QuoteFormData {
   name: string;
-  phone: string;
   city: "جدة" | "الرياض";
   shutterType: "رول" | "داخلي" | "خارجي";
   contactMethod: "واتساب" | "اتصال";
@@ -18,7 +17,6 @@ interface QuoteFormProps {
 
 const initialData: QuoteFormData = {
   name: "",
-  phone: "",
   city: "الرياض",
   shutterType: "رول",
   contactMethod: "واتساب",
@@ -37,7 +35,6 @@ export function QuoteForm({ id = "quote-form", onSubmit }: QuoteFormProps) {
   function validate(): boolean {
     const next: Partial<Record<keyof QuoteFormData, string>> = {};
     if (!data.name.trim()) next.name = "الاسم مطلوب";
-    if (!data.phone.trim()) next.phone = "رقم الجوال مطلوب";
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -54,7 +51,7 @@ export function QuoteForm({ id = "quote-form", onSubmit }: QuoteFormProps) {
     <form
       id={id}
       onSubmit={handleSubmit}
-      className="mx-auto max-w-xl rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
+      className="mx-auto w-full max-w-2xl rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
     >
       <h2 className="text-xl font-bold text-zinc-900 mb-6">
         احصل على عرض سعر بدون التزام
@@ -78,26 +75,6 @@ export function QuoteForm({ id = "quote-form", onSubmit }: QuoteFormProps) {
           />
           {errors.name && (
             <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-          )}
-        </div>
-
-        <div>
-          <label
-            htmlFor="quote-phone"
-            className="block text-sm font-medium text-zinc-700 mb-1.5"
-          >
-            رقم الجوال *
-          </label>
-          <input
-            id="quote-phone"
-            type="tel"
-            value={data.phone}
-            onChange={(e) => setData((d) => ({ ...d, phone: e.target.value }))}
-            className={inputBase}
-            placeholder="05xxxxxxxx"
-          />
-          {errors.phone && (
-            <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
           )}
         </div>
 

@@ -16,13 +16,13 @@ const tajawal = Tajawal({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://wisam-alshutter.com"),
-  title: "وسام الشتر — شتر شبابيك ورول",
+  title: "نوافذ شتر — شتر شبابيك ورول",
   description:
-    "وسام الشتر للحدادة والألمنيوم — تركيب شتر رول، شتر داخلي وخارجي، شتر كهربائي ويدوي. الرياض وجدة. خبرة 10 سنوات.",
+    "نوافذ شتر للحدادة والألمنيوم — تركيب شتر رول، شتر داخلي وخارجي، شتر كهربائي ويدوي. الرياض وجدة. خبرة 10 سنوات.",
   openGraph: {
-    title: "وسام الشتر — شتر شبابيك ورول",
+    title: "نوافذ شتر — شتر شبابيك ورول",
     description:
-      "وسام الشتر للحدادة والألمنيوم — تركيب شتر رول، شتر داخلي وخارجي، شتر كهربائي ويدوي. الرياض وجدة. خبرة 10 سنوات.",
+      "نوافذ شتر للحدادة والألمنيوم — تركيب شتر رول، شتر داخلي وخارجي، شتر كهربائي ويدوي. الرياض وجدة. خبرة 10 سنوات.",
     locale: "ar_SA",
     type: "website",
   },
@@ -62,6 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div className="h-[44px] shrink-0" aria-hidden />
           )}
           <Header hasRamadanBar={siteConfig.ramadan.isRamadanMode} />
+          <div className="h-16 shrink-0" aria-hidden />
           <main className="pb-24 md:pb-0 overflow-x-hidden">{children}</main>
           <Footer />
         </ConversionProvider>

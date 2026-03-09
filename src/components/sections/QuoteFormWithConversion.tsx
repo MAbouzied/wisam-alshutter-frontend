@@ -5,6 +5,7 @@ import { QuoteForm, type QuoteFormData } from "./QuoteForm";
 import { Toast } from "@/components/ui/Toast";
 import { useConversion } from "@/components/providers/ConversionProvider";
 import { track } from "@/lib/analytics";
+import { getWhatsAppQuoteUrl } from "@/lib/whatsappHelper";
 
 interface QuoteFormWithConversionProps {
   id?: string;
@@ -21,8 +22,17 @@ export function QuoteFormWithConversion({ id = "quote-form" }: QuoteFormWithConv
         city: data.city,
         contactMethod: data.contactMethod,
       });
-      const mode = data.contactMethod === "واتساب" ? "whatsapp" : "call";
-      openBranchSelector(mode, "form");
+      if (data.contactMethod === "واتساب") {
+        const url = getWhatsAppQuoteUrl({
+          name: data.name,
+          city: data.city,
+          shutterType: data.shutterType,
+          message: data.message,
+        });
+        window.open(url, "_blank", "noopener,noreferrer");
+      } else {
+        openBranchSelector("call", "form");
+      }
     },
     [openBranchSelector]
   );

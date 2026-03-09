@@ -16,14 +16,14 @@ const routes = [
 ];
 
 export const metadata = createMetadata({
-  title: "خريطة الموقع | وسام الشتر",
-  description: "خريطة الموقع — جميع صفحات وسام الشتر للحدادة والألمنيوم.",
+  title: "خريطة الموقع | نوافذ شتر",
+  description: "خريطة الموقع — جميع صفحات نوافذ شتر للحدادة والألمنيوم.",
   path: "/site-map",
 });
 
 export default function SiteMapPage() {
   return (
-    <Section title="خريطة الموقع" subtitle="جميع صفحات موقع وسام الشتر للحدادة والألمنيوم.">
+    <Section title="خريطة الموقع" subtitle="جميع صفحات موقع نوافذ شتر للحدادة والألمنيوم.">
       <ul className="max-w-2xl mx-auto space-y-3 text-right">
         {routes.map((r) => (
           <li key={r.href}>

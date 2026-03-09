@@ -28,9 +28,10 @@ export function Footer() {
               <Image
                 src={siteConfig.brand.logo}
                 alt=""
-                width={100}
-                height={30}
-                className="h-8 w-auto object-contain [filter:brightness(0)_invert(1)]"
+                width={140}
+                height={70}
+                className="h-10 w-auto max-w-[140px] object-contain object-left [filter:brightness(0)_invert(1)]"
+                style={{ width: "auto", height: "2.5rem" }}
               />
             </Link>
             <p className="text-lg font-semibold text-white mb-2">

@@ -11,11 +11,11 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        title="وسام الشتر — شتر شبابيك ورول"
+        title="نوافذ شتر — شتر شبابيك ورول"
         subtitle="تركيب شتر رول، شتر داخلي وخارجي، شتر كهربائي ويدوي. خبرة 10 سنوات. الضمان: 5 أعوام على المحركات و 10 أعوام على الشرائح."
       />
       <Section
-        title="لماذا وسام الشتر؟"
+        title="لماذا نوافذ شتر؟"
         muted={false}
       >
         <div className="grid gap-6 md:grid-cols-3 text-center">

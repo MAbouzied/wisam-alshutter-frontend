@@ -1,23 +1,23 @@
 export const siteConfig = {
   brand: {
-    short: "وسام الشتر",
-    long: "وسام الشتر للحدادة والألمنيوم",
+    short: "نوافذ شتر",
+    long: "نوافذ شتر للحدادة والألمنيوم",
     logo: "/brand/logo.svg",
   },
   branches: {
     riyadh: {
       city: "الرياض",
-      phone: "+966500158650",
-      whatsapp: "+966500158650",
+      phone: "+966557886159",
+      whatsapp: "+966557886159",
       address: "2152-2234 يزيد الحميري، بدر، الرياض 14727",
     },
     jeddah: {
       city: "جدة",
-      phone: "+966506023117",
-      whatsapp: "+966506023117",
+      phone: "+966557886159",
+      whatsapp: "+966557886159",
     },
   },
-  email: "[email protected]",
+  email: "info@nwafzshutter.shop",
   warranty: "5 أعوام على المحركات و 10 أعوام على الشرائح",
   experience: "خبرة 10 سنوات",
   steps: [

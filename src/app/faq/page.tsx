@@ -6,8 +6,8 @@ import { ServiceCtaLink } from "@/components/ui/ServiceCtaLink";
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "الأسئلة الشائعة | وسام الشتر",
-  description: "أسئلة شائعة عن شتر رول، تركيب شتر، الضمان، رمضان، والخدمات. وسام الشتر للحدادة والألمنيوم.",
+  title: "الأسئلة الشائعة | نوافذ شتر",
+  description: "أسئلة شائعة عن شتر رول، تركيب شتر، الضمان، رمضان، والخدمات. نوافذ شتر للحدادة والألمنيوم.",
   path: "/faq",
 });
 

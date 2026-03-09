@@ -6,8 +6,8 @@ import { ServiceCtaLink } from "@/components/ui/ServiceCtaLink";
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "من نحن | وسام الشتر",
-  description: "وسام الشتر للحدادة والألمنيوم — خبرة 10 سنوات في تركيب شتر شبابيك. الرياض وجدة.",
+  title: "من نحن | نوافذ شتر",
+  description: "نوافذ شتر للحدادة والألمنيوم — خبرة 10 سنوات في تركيب شتر شبابيك. الرياض وجدة.",
   path: "/about",
 });
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
     <>
       <Hero
         title="من نحن"
-        subtitle="وسام الشتر للحدادة والألمنيوم — خبرة 10 سنوات في تركيب شتر رول، شتر نوافذ، شبابيك وأبواب ألمنيوم."
+        subtitle="نوافذ شتر للحدادة والألمنيوم — خبرة 10 سنوات في تركيب شتر رول، شتر نوافذ، شبابيك وأبواب ألمنيوم."
         showCta={true}
       />
       <Section title={siteConfig.experience}>

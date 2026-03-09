@@ -3,8 +3,8 @@ import { Hero } from "@/components/sections/Hero";
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "سياسة الخصوصية | وسام الشتر",
-  description: "سياسة الخصوصية لموقع وسام الشتر للحدادة والألمنيوم.",
+  title: "سياسة الخصوصية | نوافذ شتر",
+  description: "سياسة الخصوصية لموقع نوافذ شتر للحدادة والألمنيوم.",
   path: "/privacy",
 });
 

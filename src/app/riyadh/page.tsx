@@ -8,8 +8,8 @@ import { siteConfig } from "@/config/siteConfig";
 import { createMetadata } from "@/config/metadata";
 
 export const metadata = createMetadata({
-  title: "شتر شبابيك الرياض | وسام الشتر",
-  description: "تركيب شتر رول، شتر داخلي وخارجي في الرياض. وسام الشتر — خبرة 10 سنوات. العنوان: بدر، الرياض.",
+  title: "شتر شبابيك الرياض | نوافذ شتر",
+  description: "تركيب شتر رول، شتر داخلي وخارجي في الرياض. نوافذ شتر — خبرة 10 سنوات. العنوان: بدر، الرياض.",
   path: "/riyadh",
 });
 
@@ -20,7 +20,7 @@ export default function RiyadhPage() {
         title="شتر شبابيك الرياض"
         subtitle="تركيب شتر رول، شتر داخلي، شتر خارجي في الرياض. رد سريع على واتساب. احصل على عرض سعر بدون التزام."
       />
-      <Section title="لماذا وسام الشتر في الرياض؟">
+      <Section title="لماذا نوافذ شتر في الرياض؟">
         <div className="grid gap-6 md:grid-cols-3 text-center">
           <Card variant="benefit">
             <p className="font-bold text-primary">{siteConfig.experience}</p>
